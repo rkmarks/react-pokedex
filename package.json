@@ -1,0 +1,52 @@
+{
+  "name": "react-pokedex",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "enzyme": "^2.9.1",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "flow-bin": "^0.59.0",
+    "husky": "^0.14.3",
+    "jest-enzyme": "^4.0.1",
+    "lint-staged": "^6.0.0",
+    "material-ui": "^0.19.4",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.9.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "next",
+    "react-scripts": "1.0.17",
+    "react-test-renderer": "^15.6.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-stage-1": "^6.24.1",
+    "react-scripts": "1.0.17",
+    "redux-logger": "^3.0.6"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "predeploy": "gh-pages -d build",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all build-css build-js",
+    "test": "react-scripts test --env=jsdom",
+    "flow": "flow",
+    "eject": "react-scripts eject"
+  },
+  "homepage": "https://rkmarks.github.io/react-pokedex"
+}
